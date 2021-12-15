@@ -1,3 +1,7 @@
+
+ <link rel="stylesheet" type="text/css" href="post_images.css">
+<!-- Use an element to toggle between a like/dislike icon -->
+
 <p id="notice"><%= notice %></p>
 
 <h1>Post Images</h1>
@@ -36,7 +40,7 @@
         
         <% if post_image.image.attached? %>
         <strong>Image:</strong>
-          <p><%= image_tag post_image.image %></p>
+          <p id= "image"><%= image_tag post_image.image %></p>
         <% end %>
         <p><%= link_to 'Show', post_image %></p>
         <p><%= link_to 'Edit', edit_post_image_path(post_image) %></p>

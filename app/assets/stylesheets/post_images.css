@@ -1,0 +1,15 @@
+input[type=submit] {
+  color: white;
+  background-color: blue;
+  border-radius: 20%;
+}
+
+input[type=submit]:hover{
+  background-color: rgb(95, 95, 255);
+  color: whitesmoke;
+}
+
+img{
+  border-radius: 50%;
+  height: 300px;
+}
