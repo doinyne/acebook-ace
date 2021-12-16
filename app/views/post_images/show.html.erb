@@ -45,7 +45,7 @@
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 
-              <%= button_to 'Like', post_image_path(comment), method: :post_image %>
+              <%= button_to 'Like', post_image_likes_path(comment), method: :post_image %>
               
 <% end %>
 

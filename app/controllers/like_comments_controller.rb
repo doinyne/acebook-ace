@@ -5,9 +5,9 @@ class LikeCommentsController < ApplicationController
     if already_liked?
       flash[:notice] = "You can't like more than once"
     else
-      @post_image.likes.create(user_id: Current.user.id)
+      @comment.likes.create(user_id: Current.user.id)
     end
-    redirect_to post_images_path(@post_image)
+    redirect_to post_image_path(@comment)
   end
 
   def destroy
@@ -17,7 +17,7 @@ class LikeCommentsController < ApplicationController
       find_like
       @like.destroy
     end
-    redirect_to post_images_path(@post_image)
+    redirect_to post_image_path(@comment)
   end
 
   def find_like
@@ -35,5 +35,8 @@ class LikeCommentsController < ApplicationController
     @post_image = PostImage.find(params[:post_image_id])
   end
 
+  def comment 
+    @comment = LikeComment.find(params[:post_id])
+  end
 
 end
