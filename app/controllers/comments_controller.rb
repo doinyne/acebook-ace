@@ -10,14 +10,23 @@ class CommentsController < ApplicationController
     redirect_to post_image_path(@post_image)
   end
 
-  def edit; end
+  def edit
+    p params
+    @post_image = PostImage.find(params[:id])
+    p @post_image.comments
+    @comment = @post_image.comments.find(params[:post_image_id])
+    p @comment
+  end
 
   def update
     @post_image = PostImage.find(params[:post_image_id])
     @comment = @post_image.comments.find(params[:id])
-    @comment.update(comment_params)
-    redirect_to edit_post_image_comments_url,
-                notice: 'Comment was successfully updated.'
+    if @comment.update(comment_params)
+      redirect_to post_image_path(@post_image),
+                  notice: 'Comment was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
