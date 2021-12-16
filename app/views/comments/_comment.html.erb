@@ -16,6 +16,7 @@
     <%= comment.body %>
   </p>
 <% if comment.user == Current.user %>
+  <p><%= link_to 'Edit', edit_post_image_comment_path(comment) %></p>
   <p>
   <%= link_to 'Destroy Comment', [comment.post_image, comment],
               method: :delete,
