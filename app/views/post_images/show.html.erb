@@ -28,40 +28,7 @@
 <%= link_to 'Back', post_images_path %>
 
 <h2>Comments</h2>
-<% @post_image.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.user.email %>
-  </p>
-  <p>
-      <%=image_tag(comment.user.image, height: '50', width: '50')%>
-  </p>
-
-    <p>
-    <strong>Timestamp:</strong>
-    <%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% if comment.user == Current.user %>
-  <p>
-  <%= link_to 'Destroy Comment', [comment.post_image, comment],
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-</p>
-<% end %>
-<% end %>
+<%= render @post_image.comments%>
 
 <h2>Add a comment:</h2>
-<%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'comments/form' %>

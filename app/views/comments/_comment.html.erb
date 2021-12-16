@@ -1,0 +1,24 @@
+ <p>
+    <strong>Commenter:</strong>
+    <%= comment.user.email %>
+  </p>
+  <p>
+      <%=image_tag(comment.user.image, height: '50', width: '50')%>
+  </p>
+
+    <p>
+    <strong>Timestamp:</strong>
+    <%= comment.created_at.strftime("%A %d %B %Y, %I:%M%p").freeze %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% if comment.user == Current.user %>
+  <p>
+  <%= link_to 'Destroy Comment', [comment.post_image, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+</p>
+<% end %>
