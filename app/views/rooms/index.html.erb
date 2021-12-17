@@ -1,21 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div id="room-id" data-room-id="<%= @room.try(:id) %>"></div>
+<div id="user-id" data-user-id="<%= Current.user.id %>"></div>
 
-<div class='container-fluid'>
-<div class='row'>
-<div class='col-3'>
-<p>Hello, <%= Current.user.email%><p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 rooms-sidebar">
+      <div class="card no-outline">
+        <div class="card-body">
+          <small>Logged in as</small><br>
+          <b><%= Current.user.email %><br></b>
+        </div>
+      </div>
 
 <%= render 'form', room: Room.new %>
 <hr>
 <% @rooms.each do |room| %>
-<%= link_to room do %>
-<div class='card mb-2'>
-<div class='card-body'>
-<%= link_to room.name %>
-</div>
-</div>
-<% end %>
-<% end %>
+        <%= link_to room, class: 'room-link' do %>
+          <% active_class = (@room == room) ? 'active' : '' %>
+          <div class="card no-outline mb-2 room-card <%= active_class %>">
+            <div class="card-body">
+              <span class='name'><%= room.name %></span><br>
+              <span class='member-count'>
+                <small><%= room.users.uniq.count %> Members</small>
+              </span>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
 </div>
 <div class= 'col-9'>
 <% if @room.present? %>
