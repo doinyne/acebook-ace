@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="post_images.css">
+<link rel="stylesheet" type="text/css" href="comments.css">
 <p id="notice"><%= notice %></p>
 <div class="card rounded mb-5 pt-2 facebook">
   
@@ -29,7 +30,7 @@
 </div>
 </div>
 <%# divider %>
-<h2 class="h2 text-center">Comments</h2>
+<h2 class="h2 text-center tag">Comments</h2>
 <% @post_image.comments.each do |comment| %>
   <div class="card  mb-5 p-2 facebook">
     <div class="card-body">
@@ -63,7 +64,7 @@
 </div>
 <% end %>
 <%# divider %>
-<h2 class="h2 text-center">Add a comment</h2>
+<h2 class="h2 text-center tag">Add a comment</h2>
 <div class="">
   <%= form_with model: [ @post_image, @post_image.comments.build ] do |form| %>
     <%= form.label :body, :class => "form-label" %>
