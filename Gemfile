@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'redis'
 
+gem 'activestorage'
+gem 'active_storage_validations'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
