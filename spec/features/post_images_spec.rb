@@ -38,7 +38,7 @@ RSpec.feature 'Post Image', type: :feature do
     expect(page).to have_content('this is the first comment')
   end
 
-  scenario 'can edit postt' do
+  scenario 'can edit post' do
     sign_up
     log_in
     click_link 'Create New Post'
@@ -142,7 +142,7 @@ RSpec.feature 'Post Image', type: :feature do
     click_button 'Submit'
     click_link 'Back'
     first(:button, 'Like').click
-    expect(page).to have_content('1Like')
+    expect(page).to have_content('1')
   end
 
   scenario 'User can unlike post' do
@@ -154,9 +154,9 @@ RSpec.feature 'Post Image', type: :feature do
     click_button 'Submit'
     click_link 'Back'
     first(:button, 'Like').click
-    expect(page).to have_content('1Like')
+    expect(page).to have_content('1')
     first(:button, 'Unlike').click
-    expect(page).to have_content('0Likes')
+    expect(page).to have_content('0')
   end
 
   scenario 'new posts show user details(profile image and email)' do

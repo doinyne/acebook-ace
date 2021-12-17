@@ -27,32 +27,32 @@ class MessagesController < ApplicationController
   end
 
   # PATCH/PUT /messages/1 or /messages/1.json
-  def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html do
-          redirect_to @message, notice: 'Message was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @message }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json do
-          render json: @message.errors, status: :unprocessable_entity
-        end
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @message.update(message_params)
+  #       format.html do
+  #         redirect_to @message, notice: 'Message was successfully updated.'
+  #       end
+  #       format.json { render :show, status: :ok, location: @message }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json do
+  #         render json: @message.errors, status: :unprocessable_entity
+  #       end
+  #     end
+  #   end
+  # end
 
-  # DELETE /messages/1 or /messages/1.json
-  def destroy
-    @message.destroy
-    respond_to do |format|
-      format.html do
-        redirect_to messages_url, notice: 'Message was successfully destroyed.'
-      end
-      format.json { head :no_content }
-    end
-  end
+  # # DELETE /messages/1 or /messages/1.json
+  # def destroy
+  #   @message.destroy
+  #   respond_to do |format|
+  #     format.html do
+  #       redirect_to messages_url, notice: 'Message was successfully destroyed.'
+  #     end
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
 

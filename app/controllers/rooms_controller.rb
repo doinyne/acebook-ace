@@ -32,37 +32,37 @@ class RoomsController < ApplicationController
         end
         format.json { render :show, status: :created, location: @room }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
+        redirect_to new_post_image_url,
+          alert: 'Room cannot be created check fields.'
       end
     end
   end
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
-  def update
-    respond_to do |format|
-      if @room.update(room_params)
-        format.html do
-          redirect_to @room, notice: 'Room was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @room }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @room.update(room_params)
+  #       format.html do
+  #         redirect_to @room, notice: 'Room was successfully updated.'
+  #       end
+  #       format.json { render :show, status: :ok, location: @room }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @room.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /rooms/1 or /rooms/1.json
-  def destroy
-    @room.destroy
-    respond_to do |format|
-      format.html do
-        redirect_to rooms_url, notice: 'Room was successfully destroyed.'
-      end
-      format.json { head :no_content }
-    end
-  end
+  # # DELETE /rooms/1 or /rooms/1.json
+  # def destroy
+  #   @room.destroy
+  #   respond_to do |format|
+  #     format.html do
+  #       redirect_to rooms_url, notice: 'Room was successfully destroyed.'
+  #     end
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
 
