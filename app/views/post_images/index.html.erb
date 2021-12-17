@@ -1,11 +1,12 @@
 <link rel="stylesheet" type="text/css" href="post_images.css">
 <p id="notice"><%= notice %></p>
-<h1 class="h1 text-center mb-3 mt-4">Posts</h1>
 
+<h1 class="h1 text-center mb-3 mt-4">Posts</h1>
 <div class= "row text-center mb-3">
 <%= link_to "Create New Post", new_post_image_path, :class=> "back" %>
-
+<%= link_to 'Chat', rooms_path %>
 </div>
+
 <% @post_images.each do |post_image| %>
   <div class="card rounded mb-3 pt-2 facebook" >
     <div class="row">
