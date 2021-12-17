@@ -2,6 +2,7 @@
 <p id="notice"><%= notice %></p>
 <h1 class="h1 text-center mb-5 mt-5">Posts</h1>
 <%= link_to 'Create New Post', new_post_image_path %>
+<%= link_to 'Chat', rooms_path %>
 <% @post_images.each do |post_image| %>
   <div class="card rounded mb-5 pt-2 facebook" >
     <div class="row">
