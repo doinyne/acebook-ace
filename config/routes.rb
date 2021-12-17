@@ -12,4 +12,7 @@ Rails
       resources :comments
       resources :likes
     end
+
+    resources :messages
+    resources :rooms
   end
