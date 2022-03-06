@@ -1,5 +1,8 @@
 # AceBook
 
+![acebook1](https://user-images.githubusercontent.com/41869496/156927020-060be0d7-b04c-48f1-895f-e2d031c239a0.gif)
+![acebook2](https://user-images.githubusercontent.com/41869496/156927021-9a07cfa0-9729-41a0-b908-ca188711fceb.gif)
+
 ## Links
 - Link to our [Trello Board](https://trello.com/b/L3P4vDYK/acebook-team-name)
 
